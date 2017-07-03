@@ -1,0 +1,35 @@
+@import '../../../styles/utilities/index';
+.legend {
+    display: none;
+}
+
+line {
+    display: none;
+}
+
+.chart {
+	@include m(line){
+		margin-right: 50px;
+	}
+    @include e(wrapper) {
+        @include m(outer) {
+            @include flexbox();
+            @include flex-dir(column);
+            @include align-items(center);
+            @include justify-content(center);
+        }
+        @include m(inner) {
+            @include flexbox();
+            @include flex-dir(row);
+            @include align-items(center);
+            @include justify-content(center);
+        }
+    }
+    @include e(title){
+        margin-top: 50px;
+        font-family: $font-family--primary;
+        font-weight: $font-weight--bold;
+        color: palette(primary, x-dark);
+        font-size: 1.5em;
+    }
+}

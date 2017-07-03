@@ -1,0 +1,51 @@
+@import '../../../styles/utilities/index';
+.app {
+    @include e(header) {
+        font-size: 4em;
+        font-weight: $font-weight--light;
+        margin-bottom: 30px;
+        color: $color--primary;
+        font-family: $font-family--primary;
+        @include m(sub) {
+            font-size: 1em;
+            background: $white;
+            padding: 2em 4em;
+            text-align: center;
+            color: $white;
+            background: $color--primary;
+            font-family: $font-family--primary
+        }
+    }
+}
+
+.button {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    display: inline-block;
+    text-decoration: none!important;
+    text-align: center;
+    font-family: $font-family--primary;
+    border-width: 0.05em 0.05em 0.05em 0.05em;
+    border: 0.05em solid $rum;
+    border-style: solid;
+    background: #fff;
+    color: $rum;
+    padding: 0.2em;
+    font-size: 1.75em;
+    border-radius: 4px;
+    width: 150px;
+    transition: all .2s;
+    border-image: linear-gradient(45deg, #c024b6, #3023ae), linear-gradient(45deg, #c024b6, #3023ae) 1 100%;
+    &:hover,
+    &:focus,
+    &.active {
+        box-shadow: none;
+        border-width: 0;
+        border-style: solid;
+        text-decoration: none;
+        border-image: linear-gradient(45deg, #c024b6, #3023ae), linear-gradient(45deg, #c024b6, #3023ae) 1 100%;
+        background: linear-gradient(45deg, #c024b6, #3023ae);
+        color: #fff;
+    }
+}

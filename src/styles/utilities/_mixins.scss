@@ -1,0 +1,81 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+// BEM selectors
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+// Media queries
+@mixin mq($break) {
+    @if $break=="small" {
+        @media only screen and (min-width: $brkpoint-sm) and (max-width: $brkpoint-md), only screen and (min-device-width: $brkpoint-sm) and (max-device-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break=="medium" {
+        @media only screen and (min-width: $brkpoint-md + 1) and (max-width: $brkpoint-lg - 1), only screen and (min-device-width: $brkpoint-md + 1) and (max-width: $brkpoint-lg - 1) {
+            @content;
+        }
+    }
+    @else if $break=="large" {
+        @media only screen and (min-width: $brkpoint-lg), only screen and (min-device-width: $brkpoint-lg) {
+            @content;
+        }
+    }
+    @else {
+        @error "Whoops! No value could be retrieved for `#{$break}`. ";
+    }
+}
+
+// Generate modifier color classes
+@mixin bg-colors($map) {
+    @each $theme,
+    $color in $map {
+        &--#{$theme} {
+            background-color: $color;
+        }
+    }
+}
+@mixin bg-gradients($map) {
+    @each $theme,
+    $color in $map {
+        &--#{$theme} {
+            background: $color;
+        }
+    }
+}
+
+
+@mixin prefixed($property,
+$value) {
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}

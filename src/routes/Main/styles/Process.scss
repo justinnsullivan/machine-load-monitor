@@ -1,0 +1,25 @@
+@import '../../../styles/utilities/index';
+.process {
+    @include flexbox();
+    @include flex-dir(column);
+    @include align-items(center);
+    @include justify-content(center);
+    margin: 0 60px;
+    @include e(list) {
+        @include flexbox();
+        @include flex-dir(row);
+        @include align-items(center);
+        @include justify-content(center);
+    }
+    @include e(value){
+    	color: $rum;
+    	font-size: 4.5em;
+    	font-family: $font-family--primary;
+    	font-weight: $font-weight--light;
+    }
+    @include e(type){
+    	color: $rum;
+    	font-size: 1.25em;
+    	font-family: $font-family--primary;
+    }
+}

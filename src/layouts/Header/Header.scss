@@ -1,0 +1,61 @@
+@import '../../styles/utilities/index';
+.page-layout__viewport {
+    padding-top: 4rem;
+}
+
+.page-layout__nav-item--active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navigation {
+    background: $white;
+    height: 150px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .07);
+    border-bottom: 1px solid transparent;
+    margin-bottom: 50px;
+    @include flexbox();
+    @include flex-dir(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include e(link) {
+        display: inline-block;
+        text-decoration: none!important;
+        text-align: center;
+        font-family: $font-family--primary;
+        border-width: 0.05em 0.05em 0.05em 0.05em;
+        border-style: solid;
+        background: #fff;
+        color: $rum;
+        margin: 0;
+        padding: 0.2em;
+        font-size: 1.75em;
+        border-radius: 4px;
+        width: 150px;
+        margin: 0 3em;
+        transition: all .2s;
+        border-image: linear-gradient(45deg, #c024b6, #3023ae), linear-gradient(45deg, #c024b6, #3023ae) 1 100%;
+        &:hover,
+        &:focus,
+        &.active {
+            border-width: 0.05em 0.05em 0.05em 0.05em;
+            border-style: solid;
+            text-decoration: none;
+            border-image: linear-gradient(45deg, #c024b6, #3023ae), linear-gradient(45deg, #c024b6, #3023ae) 1 100%;
+            background: linear-gradient(45deg, #c024b6, #3023ae);
+            color: #fff;
+        }
+    }
+    @include e(logo) {
+        @include flexbox();
+        @include flex-dir(column);
+        @include align-items(center);
+        @include justify-content(center);
+        @include e(dog) {
+        	height: 100px;
+        }
+        @include e(text) {
+        	max-width: 93px;
+        }
+    }
+}
