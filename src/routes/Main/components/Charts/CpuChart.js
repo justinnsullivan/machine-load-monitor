@@ -36,7 +36,6 @@ class CpuChart extends Component {
     if (percentages.length !== 0) {
       chartSeries = []
       for (var i = 0; i < percentages.length; i++) {
-        console.log(color)
         if (color === 3) color = 0
         let data = {
           'field': percentages[i].type,
